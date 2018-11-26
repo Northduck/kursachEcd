@@ -51,7 +51,7 @@ void Conveyor::execution(){
     while(!checkConv()){
         parallelExec();
         printConv();
-        if(commFlow[currCommand].getTFS(4)==0){
+        if(commFlow[currCommand].getTFS(4)==0&&checkStagesStatus()){
             commFlow[currCommand].setStatus();
             executionTime[currCommand]=commFlow[currCommand].getTime();
             stages[4]=-1;
